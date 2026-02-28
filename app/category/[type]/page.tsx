@@ -160,16 +160,17 @@ html, body {
   gap: 16px;
 }
 
+/* 📱 มือถือ */
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* 📱 จอเล็กมาก */
 @media (max-width: 480px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr;
   }
 }
 
