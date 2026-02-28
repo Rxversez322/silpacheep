@@ -28,7 +28,9 @@ export default async function CategoryPage({
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600&display=swap');
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after {
+  box-sizing: border-box;
+}
 
         :root {
           --bg:     #f9f7f4;
