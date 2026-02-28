@@ -146,14 +146,27 @@ export default async function CategoryPage({
         .main-title { font-size: 1.15rem; font-weight: 600; }
         .main-count { font-size: 0.8rem; color: var(--gray); }
 
-        /* Grid */
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
-        }
-        @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 480px) { .grid { gap: 10px; } }
+/* Grid */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .grid { 
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
 
         /* Card */
         .pcard {
@@ -185,26 +198,25 @@ export default async function CategoryPage({
         }
         .pcard:hover .pcard-img { transform: scale(1.06); }
 
-        .pcard-body {
-          padding: 14px 16px 16px;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          border-top: 2px solid transparent;
-          transition: border-color 0.25s;
-        }
+.pcard-body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid transparent;
+  transition: border-color 0.25s;
+}
         .pcard:hover .pcard-body { border-color: var(--green); }
 
         .pcard-cat { font-size: 0.62rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; }
         .pcard-name { font-size: 0.9rem; font-weight: 500; line-height: 1.45; flex: 1; }
 
-        .pcard-footer {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-top: 4px;
-        }
+.pcard-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
         .pcard-price { font-size: 1rem; font-weight: 600; color: var(--green); }
         .btn-cart {
           padding: 7px 14px;

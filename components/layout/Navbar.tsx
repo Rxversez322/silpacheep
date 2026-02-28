@@ -79,15 +79,16 @@ export default function Navbar() {
           box-shadow: 0 1px 24px rgba(26, 28, 24, 0.07);
         }
 
-        .navbar-inner {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 80px;
-          height: 64px;
-          max-width: 1440px;
-          margin: 0 auto;
-        }
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  width: 100%;
+  padding: 0 16px;   /* 👈 เปลี่ยนเป็น 16px */
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
         /* ── Logo ── */
         .nav-logo {
