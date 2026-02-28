@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 import { supabase } from "@/lib/supabase"
 import Link from "next/link"
 
@@ -62,15 +61,16 @@ export default async function CategoryPage({
         .bc-sep { color: #ccc; }
         .bc-cur { color: var(--ink); font-weight: 500; }
 
-        .layout {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 28px 32px 80px;
-          display: grid;
-          grid-template-columns: 200px 1fr;
-          gap: 40px;
-          align-items: start;
-        }
+.layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 16px 80px;   /* 👈 ลดจาก 32px เป็น 16px */
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;                /* 👈 ลด gap */
+  align-items: start;
+}
         @media (max-width: 768px) {
           .layout { grid-template-columns: 1fr; }
           .sidebar { display: none; }
@@ -146,25 +146,22 @@ export default async function CategoryPage({
         .main-title { font-size: 1.15rem; font-weight: 600; }
         .main-count { font-size: 0.8rem; color: var(--gray); }
 
-/* Grid */
 .grid {
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .grid { 
-    grid-template-columns: repeat(2, 1fr); 
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .grid { 
-    grid-template-columns: 1fr;
-    gap: 18px;
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
 
@@ -198,25 +195,26 @@ export default async function CategoryPage({
         }
         .pcard:hover .pcard-img { transform: scale(1.06); }
 
-.pcard-body {
-  padding: 16px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  border-top: 2px solid transparent;
-  transition: border-color 0.25s;
-}
+        .pcard-body {
+          padding: 14px 16px 16px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          border-top: 2px solid transparent;
+          transition: border-color 0.25s;
+        }
         .pcard:hover .pcard-body { border-color: var(--green); }
 
         .pcard-cat { font-size: 0.62rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; }
         .pcard-name { font-size: 0.9rem; font-weight: 500; line-height: 1.45; flex: 1; }
 
-.pcard-footer {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+        .pcard-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 4px;
+        }
         .pcard-price { font-size: 1rem; font-weight: 600; color: var(--green); }
         .btn-cart {
           padding: 7px 14px;
