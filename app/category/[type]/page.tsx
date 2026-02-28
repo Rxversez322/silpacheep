@@ -32,6 +32,11 @@ export default async function CategoryPage({
   box-sizing: border-box;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
         :root {
           --bg:     #f9f7f4;
           --white:  #ffffff;
@@ -150,7 +155,8 @@ export default async function CategoryPage({
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
