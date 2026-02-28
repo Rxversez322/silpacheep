@@ -200,12 +200,14 @@ export default function ProfilePage() {
           border-radius: 10px; padding: 14px 12px;
           text-align: center;
         }
-        .stat-num {
-          font-family: 'Cormorant Garamond', serif;
-          font-size: 1.8rem; font-weight: 700;
-          color: var(--green-mid); line-height: 1;
-          margin-bottom: 4px;
-        }
+.stat-num {
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  line-height: 1;
+  margin-bottom: 4px;
+}
         .stat-label {
           font-size: 0.65rem; font-weight: 500;
           color: var(--ink-light); letter-spacing: 0.1em;
