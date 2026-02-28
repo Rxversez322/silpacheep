@@ -248,11 +248,28 @@ export default function Navbar() {
           font-family: 'Noto Sans Thai', sans-serif;
         }
 
-        @media (max-width: 768px) {
-          .navbar-inner { padding: 0 24px; }
-          .nav-logo-en  { display: none; }
-          .btn-login    { display: none; }
-        }
+@media (max-width:768px){
+
+  .navbar-inner{
+    height:56px;
+    padding:0 16px;
+  }
+
+  .nav-logo-en{
+    display:none;
+  }
+
+  /* ซ่อนแค่ logout กับ divider */
+  .btn-logout,
+  .nav-divider{
+    display:none;
+  }
+
+  /* ปรับขนาดปุ่ม login ให้เล็กลง */
+  .nav-auth-link{
+    font-size:0.65rem;
+    padding:6px 10px;
+  }
       `}</style>
 
       <nav className={`navbar${scrolled ? " scrolled" : ""}`}>

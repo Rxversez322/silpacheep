@@ -2,6 +2,10 @@ import "./globals.css"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 
+export const metadata = {
+  viewport: "width=device-width, initial-scale=1",
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -9,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="th">
-      <body>
+      <body className="overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />
