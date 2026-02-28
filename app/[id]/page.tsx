@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase"
+export const dynamic = "force-dynamic";
 import AddToCartButton from "@/components/AddToCartButton"
 import Link from "next/link"
 
