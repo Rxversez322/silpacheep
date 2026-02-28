@@ -28,14 +28,7 @@ export default async function CategoryPage({
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600&display=swap');
 
-        *, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
           --bg:     #f9f7f4;
@@ -68,16 +61,15 @@ html, body {
         .bc-sep { color: #ccc; }
         .bc-cur { color: var(--ink); font-weight: 500; }
 
-.layout {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 28px 16px 80px;   /* 👈 ลดจาก 32px เป็น 16px */
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 24px;                /* 👈 ลด gap */
-  align-items: start;
-}
+        .layout {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 28px 32px 80px;
+          display: grid;
+          grid-template-columns: 200px 1fr;
+          gap: 40px;
+          align-items: start;
+        }
         @media (max-width: 768px) {
           .layout { grid-template-columns: 1fr; }
           .sidebar { display: none; }
@@ -153,26 +145,14 @@ html, body {
         .main-title { font-size: 1.15rem; font-weight: 600; }
         .main-count { font-size: 0.8rem; color: var(--gray); }
 
-.grid {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-/* 📱 มือถือ */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* 📱 จอเล็กมาก */
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
+        /* Grid */
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+        @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .grid { gap: 10px; } }
 
         /* Card */
         .pcard {
